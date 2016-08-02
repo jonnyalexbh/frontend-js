@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "description": "proyecto frontend",
+  "main": "",
+  "authors": [
+    "jonnyalexbh"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
