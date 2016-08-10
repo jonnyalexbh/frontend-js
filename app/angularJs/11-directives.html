@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngulaJs</title>
+  <script src="../../public/lib/angular.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <!--
+  <div ng-app="" ng-init="names = ['Jani', 'Hege', 'Kai']">
+  <ul>
+  <li ng-repeat="x in names">
+  {{ x}}
+</li>
+</ul>
+</div>
+-->
+
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege', country:'Sweden'},
+{name:'Kai', country:'Denmark'}]">
+
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.name + ', ' + x.country}}
+  </li>
+</ul>
+
+</div>
+
+</body>
+</html>

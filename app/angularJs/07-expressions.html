@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngulaJs</title>
+  <script src="../../public/lib/angular.js" charset="utf-8"></script>
+</head>
+<body>
+
+
+  <!--
+  <div ng-app="" ng-init="cantidad = 5;
+  valor = 500">
+  <p>Total en pesos: {{ cantidad * valor}}</p>
+</div>
+-->
+
+<!-- otra forma de hacerlo
+
+<div ng-app="" ng-init="cantidad = 5;
+valor = 500">
+
+<p>Total en pesos: <span ng-bind="cantidad * valor"></span></p>
+
+</div> -->
+
+<div ng-app="" ng-init="cantidad = 5;
+valor = 500">
+
+Cantidad: <input type="number"	ng-model="cantidad">
+Valor:    <input type="number" ng-model="valor">
+
+Total en pesos: {{ cantidad * valor}}
+
+</div>
+
+<!--
+<div ng-app="" ng-init="nombre = 'Jonny';
+apellido = 'Lopez'">
+<p>Mi nombre es {{ nombre + " " + apellido}}</p>
+</div>
+-->
+
+<!--
+<div ng-app="" ng-init="nombre = 'John';
+apellido = 'Doe'">
+<p>Mi nombre es <span ng-bind="nombre + ' ' + apellido"></span></p>
+</div>
+-->
+
+</body>
+</html>

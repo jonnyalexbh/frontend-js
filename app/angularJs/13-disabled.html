@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngulaJs</title>
+  <script src="../../public/lib/angular.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <div ng-app="" ng-init="ckb_activos = false">
+    <p>
+      <input ng-disabled="ckb_activos" name="feini" id="feini" type="text" placeholder="yyyy-mm-dd">
+      <input ng-disabled="ckb_activos" name="fefin" id="feini" type="text" placeholder="yyyy-mm-dd">
+    </p>
+    <p>
+      <input type="checkbox" ng-model="ckb_activos"/>Todos los activos
+    </p>
+    <p>
+      {{ ckb_activos}}
+    </p>
+  </div>
+
+</body>
+</html>
