@@ -26,6 +26,7 @@ $(document).ready(function(){
     success: function (data, textStatus, xhr)
     {
       var $tvShowsContainer= $('#app-body').find('.tv-shows');
+      $tvShowsContainer.find('.loader').remove();
 
       data.forEach(function (show) {
         var article = template
