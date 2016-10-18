@@ -39,7 +39,7 @@ $(document).ready(function(){
       })
     }
   })
-  
+
 })
 
 /* Add and remove class time */
