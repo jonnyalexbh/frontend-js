@@ -1,5 +1,24 @@
 $(document).ready(function(){
 
+  $('#app-body')
+  .find('form')
+  .submit(function (ev) {
+    ev.preventDefault();
+    // alert('Se hizo submit con el valor:' + )
+    var busqueda= $(this)
+    .find('input[type="text"]')
+    .val();
+    alert('Se ha buscado:' + busqueda);
+  })
+
+  $.ajax({
+    url: 'http://api.tvmaze.com/shows',
+    success: function (data, textStatus, xhr)
+    {
+      console.log(data);
+    }
+  })
+
 })
 
 /* Add and remove class time */
