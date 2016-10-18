@@ -10,6 +10,27 @@ var gulpFilter = require('gulp-filter');
 // Define paths variables
 var dest_path =  'public';
 
+// task example
+gulp.task('hello', function() {
+  console.log('Hola a todos');
+});
+
+// task 1 concatenate css tvify
+gulp.task('tvify', function () {
+  gulp.src(['resources/css/tvify.css'])
+  .pipe(concat('tvify.css'))
+  .pipe(gulp.dest(dest_path + '/css'))
+});
+
+// task 2 concatenate js tvify
+gulp.task('tvify-js', function () {
+  gulp.src(['resources/js/tvify.js'])
+  .pipe(concat('tvify.js'))
+  .pipe(gulp.dest(dest_path + '/js'))
+});
+
+
+
 // task 1 concatenate css
 gulp.task('concat-css', function () {
   gulp.src('resources/css/*.css')
