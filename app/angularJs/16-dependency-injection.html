@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div ng-app="MyFirstApp" ng-controller="FirstController">
+    <input type="text" ng-model="nombre">
+    {{ "Hola "+ nombre }}
+    <br>
+    <input type="text" ng-model="nuevoComentario.comentario"><br>
+    <input type="text" ng-model="nuevoComentario.username"><br>
+    <button ng-click="agregarComentario()">Agregar Comentario</button><br>
+
+    <h3>Comentarios</h3>
+    <ul>
+      <li ng-repeat="comentario in comentarios">
+        {{ comentario.comentario }} - <strong>{{ comentario.username }}</strong>
+      </li>
+    </ul>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var app = angular.module('MyFirstApp', []);
+  app.controller('FirstController', ['$scope',function(m){
+    m.nombre = "Mario";
+    m.nuevoComentario = {};
+    m.comentarios = [
+      {
+        comentario: "Buen Tutorial",
+        username: "codigofacilito"
+      },
+      {
+        comentario: "Malisimo tutorial",
+        username: "otroUsuario"
+      }
+    ];
+    m.agregarComentario = function(){
+      m.comentarios.push(m.nuevoComentario);
+      m.nuevoComentario = {};
+    };
+  }]);
+  </script>
+
+</body>
+</html>

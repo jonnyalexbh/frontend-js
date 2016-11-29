@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div ng-app="MyFirstApp" ng-controller="FirstController">
+    <input type="text" ng-model="newPost.title"><br>
+    <textarea name="" id="" cols="30" rows="10" ng-model="newPost.body"></textarea><br>
+    <button ng-click="addPost()">Agregar Post</button>
+    <ul>
+      <li ng-repeat="row in posts">
+        <h2>{{ row.title }}</h2>
+        <p>{{ row.body }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  angular
+  .module('MyFirstApp', [])
+  .controller('FirstController', function($scope, $http){
+
+    $scope.posts = [];
+    $scope.newPost = [];
+
+    $http.get('https://jsonplaceholder.typicode.com/posts')
+    .success(function (data) {
+      console.log(data);
+      $scope.posts=data;
+    })
+    .error(function (err) {
+      console.log(err);
+    });
+
+    $scope.addPost = function(){
+      $http.post("http://jsonplaceholder.typicode.com/posts",{
+        title: $scope.newPost.title,
+        body: $scope.newPost.body,
+        userId: 1
+      })
+      .success(function (data, status, headers, config) {
+        console.log(data);
+        $scope.posts.push(data);
+        $scope.newPost = [];
+      })
+      .error(function (error, status, headers, config) {
+        console.log(error);
+      });
+    }
+
+  });
+
+  </script>
+
+</body>
+</html>
