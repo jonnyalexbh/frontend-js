@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+  var Gato = new gato('Bola de pelos');
+  var GatoDos = new gato('minimo');
+
+  function gato(name) {
+    this.name = name;
+    this.maulla = function(){
+      console.log('miawww');
+    };
+  }
+
+  console.log(Gato.name);
+  console.log(GatoDos.name);
+  Gato.maulla();
+
+  </script>
+
+</body>
+</html>

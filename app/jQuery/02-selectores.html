@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>selectores</title>
+</head>
+<body>
+
+  <div id="dato">Hola mundo con class</div>
+  <div class="dato1">Hola mundo con id</div>
+
+  <div class="miDiv">
+    <article>
+      <p id="parrafoUno">Hola Jquery</p>
+    </article>
+  </div>
+
+  <div>
+    <article>
+      <p id="parrafoDos">pruebas jonnyalexbh</p>
+    </article>
+  </div>
+
+  <span></span>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(function(){
+
+    /* .text */
+    var data = $('.dato1').text();
+    console.log(data);
+
+    var datatwo= $('#dato').text();
+    console.log(datatwo);
+
+    /* .css */
+    $('div').css({
+      'background-color' : '#9BEA58',
+    });
+
+    $('div.miDiv').css({
+      'background-color' : '#F1EA4A',
+    });
+
+    $('div.miDiv article p').text('Hola selectores avanzado');
+
+    $('#parrafoUno, #parrafoDos, span').text('Somos iguales');
+
+  });
+
+  </script>
+</body>
+</html>
