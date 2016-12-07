@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  body,html
+  {
+    background: #CCC;
+    color: #000;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+  }
+  #item1
+  {
+    background: #F6F6F6;
+    height: 50px;
+    margin: 5% auto;
+    width: 300px;
+  }
+
+  #item2
+  {
+    display: block;
+    background: #000;
+    height: 50px;
+    margin: 5% auto;
+    width: 300px;
+  }
+  </style>
+</head>
+<body>
+
+  <h1>Metodo .css () de jquery</h1>
+  <h2>Metodo .css () de jquery h2</h2>
+  <div id="item1">Item 1</div>
+  <div id="item2">Item 2</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(function() {
+
+    $('body,html').css('background', '#076283');
+
+    $('h1').css({
+      'text-align':'center',
+      'color': '#fff'
+    });
+
+    var cssH2={
+      'text-align':'center',
+      'color': '#fff'
+    }
+
+    $('h2').css(cssH2);
+
+    var bgItem2 = $('#item2').css('background-color');
+    var cItem2 = $('#item2').css('color');
+
+    if(bgItem2 === cItem2)
+    $('#item2').css('color','#FFF');
+
+  });
+
+  </script>
+</body>
+</html>

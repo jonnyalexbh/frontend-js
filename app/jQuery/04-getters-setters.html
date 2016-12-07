@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>getters y setters</title>
+  <style media="screen">
+  .error
+  {
+    font-size: 20px;
+    color: #f4f904;
+  }
+  </style>
+</head>
+<body>
+
+  <p id="parrafo"><b>Hola mundo</b></p>
+  <div id="prueba">Div</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  var dato = $('#parrafo').html();
+  console.log(dato);
+
+  $('#prueba').attr('class', 'error');
+
+  </script>
+</body>
+</html>
