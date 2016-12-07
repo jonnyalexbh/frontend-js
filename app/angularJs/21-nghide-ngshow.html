@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Hola Mundo AngularJS</title>
+  <style>
+  .animated{
+    opacity: 1;
+    max-height: auto;
+    overflow: hidden;
+    transition: all 3s ;
+  }
+  .animated.ng-hide{
+    opacity: 0;
+    max-height: 0px !important;
+    display: block !important;
+  }
+  </style>
+</head>
+<body ng-controller="FirstController">
+  <div ng-hide="!load">Cargando.....</div>
+  <div ng-show="!load && posts.length == 0">No se encontraron posts</div>
+  <ul ng-show="posts.length > 0" class="animated">
+    <li ng-repeat="post in posts">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </li>
+  </ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var app = angular.module('MyFirstApp', []);
+  app.controller('FirstController', ['$scope','$http',function(s,h){
+    s.posts = [];
+    s.load = true;
+    h.get("http://jsonplaceholder.typicode.com/posts")
+    .success(function (data) {
+      console.log(data);
+      s.posts = data;
+      s.load = false;
+    })
+    .error(function (err) {
+      console.log(err);
+      s.load = false;
+    });
+  }]);
+  </script>
+</body>
+</html>

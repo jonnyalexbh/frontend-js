@@ -2,48 +2,68 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AngulaJs</title>
+  <title></title>
 </head>
 <body>
 
-  <!--
-  <div ng-app="myApp" ng-controller="personCtrl">
-  <p>El apellido es {{ lastName | uppercase }}</p>
-  <p>El apellido es {{ lastName | lowercase }}</p>
-</div>
--->
+  <div ng-app="myApp" ng-controller="myCtrl">
 
-<!-- <div ng-app="myApp" ng-controller="costCtrl">
-<input type="number" ng-model="quantity">
-<input type="number" ng-model="price">
+    <div>
+      <h3>Filter mayuscula y minuscula</h3>
+      <p>El nombre es {{ name | uppercase }}</p>
+      <p>El nombre es {{ name | lowercase }}</p>
+    </div><br>
 
-<p>Total = {{ (quantity * price) | currency}}</p>
-</div>
--->
+    <div>
+      <h3>Filter valores</h3>
+      <input type="number" ng-model="quantity">
+      <input type="number" ng-model="price">
+      <p>Total = {{ (quantity * price) | currency}}</p>
+    </div>
 
-<!-- <div ng-app="myApp" ng-controller="namesCtrl">
-<ul>
-<li ng-repeat="x in names| orderBy:'country'">
-{{ x.name + ', ' + x.country}}
-</li>
-</ul>
-</div>
--->
+    <div>
+      <h3>Filter and orderBy</h3>
+      <ul>
+        <li ng-repeat="x in names | orderBy:'country'">
+          {{ x.name + ', ' + x.country}}
+        </li>
+      </ul>
+    </div>
 
-<div ng-app="myApp" ng-controller="namesCtrl">
+    <div>
+      <h3>Filtering</h3>
+      <p>Filtering input:</p>
+      <p><input type="text" ng-model="test"></p>
+      <ul>
+        <li ng-repeat="x in names| filter:test | orderBy:'country'">
+          {{ (x.name | uppercase) + ', ' + x.country}}
+        </li>
+      </ul>
+    </div>
 
-  <p>Filtering input:</p>
+  </div>
 
-  <p><input type="text" ng-model="test"></p>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  angular
+  .module('myApp', [])
+  .controller('myCtrl', function($scope){
 
-  <ul>
-    <li ng-repeat="x in names| filter:test | orderBy:'country'">
-      {{ (x.name | uppercase) + ', ' + x.country}}
-    </li>
-  </ul>
+    $scope.names = [
+      {name: 'Jani', country: 'Norway'},
+      {name: 'Hege', country: 'Sweden'},
+      {name: 'Kai', country: 'Denmark'}
+    ];
+    $scope.name = "Jonny";
+    $scope.email = "Lopez";
+    $scope.quantity = 2;
+    $scope.price = 2.200;
 
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
-<script src="../../public/js/12-filters.js" charset="utf-8"></script>
+    $scope.fullName = function () {
+      return $scope.name + " " + $scope.email;
+    }
+
+  });
+  </script>
 </body>
 </html>
