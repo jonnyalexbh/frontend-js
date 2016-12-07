@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+  var name = 'jonnyalexbh';
+  var edad = 15;
+  var aux = false;
+
+  /*
+  enteros
+  flotantes
+  cadenas de texto
+  elemento html
+  objetos
+  */
+
+  /*
+  operadores:
+  + - * / Operaciones aritmeticas
+  ++ -- Aumentar o Restar uno al valor de la variable
+  = Asignacion
+  < > == != >= <= Comparaciones entre elementos o variables
+  && || ! Logicos
+  */
+
+  console.log('Hola ' + name);
+
+  if(edad>18)
+  {
+    console.log('Eres mayor de edad');
+  }
+  else {
+    console.log('Eres menor de edad');
+  }
+
+  var asignada= aux? 'Definida' : 'sin definir';
+
+  console.log(asignada);
+
+  var a=1;
+  switch (a) {
+
+    case 0:
+    console.log('variable es igual a cero');
+    break;
+
+    case 1:
+    console.log('variable es igual a uno');
+    break;
+
+    default:
+    CodigoDefault
+    break
+
+  }
+
+  /* Fucniones */
+
+  function factorial(num) {
+    var fac= 1;
+    for (num; num > 0; num--)
+    fac = fac * num;
+    return fac;
+  }
+
+  var resultado=factorial(3);
+  console.log(resultado);
+
+  </script>
+
+</body>
+</html>
