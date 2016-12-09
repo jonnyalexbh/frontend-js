@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  body,html
+  {
+    background: #000;
+    margin: 0;
+    padding: 0;
+  }
+  #header
+  {
+    display: block;
+    margin: 0 auto;
+    width: 365px;
+  }
+  #e1, #e2
+  {
+    background: #0080FF;
+    display: block;
+    height: 100px;
+    margin: 20px auto;
+    width: 400px;
+  }
+  #e1,
+  {
+    background: #FF0040;
+    height: 150px;
+  }
+  #e2
+  {
+    background: #FF0040;
+    border-radius: 60px 0 60px 0;
+  }
+  .p
+  {
+    margin-left: 10px;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="../../public/img/programacion-web.jpg" alt="web">
+  </header>
+
+  <div id="e1"></div>
+  <div id="e2"><p>Hola amigos</p></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(function() {
+
+    console.log($('header img').width())
+    console.log($('header img').css('width'))
+
+    console.log($('#e1').height())
+    console.log($('#e1').css('height'))
+
+    var pos = $('#e2 p').position();
+    var pos2 = $('#e2 p').offset();
+
+    console.log('Posicion left ' + pos.left + ' posicion top ' + pos.top)
+    console.log('Posicion left ' + pos2.left + ' posicion top ' + pos2.top)
+
+  });
+
+  </script>
+
+</body>
+</html>

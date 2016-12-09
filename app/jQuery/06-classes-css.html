@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  .test
+  {
+    background-color: #c22a1b;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="test">
+    Click on me
+  </div>
+
+  <div id="testOne" class="test">
+    Click on me
+  </div>
+
+  <div id="testTwo" class="test">
+    Click on me
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(function(){
+
+    $('#test').click(function(){
+      $(this).addClass('test');
+    });
+
+    $('#testOne').click(function(){
+      $(this).removeClass('test');
+    });
+
+    $('#testTwo').click(function(){
+      $('#testTwo').toggleClass("test");
+    });
+    
+
+    if($("#testTwo").hasClass("test"))
+    {
+      console.log('Hey! soy rojo');
+    }
+    else
+    {
+      console.log('Hey! no soy rojo');
+    }
+
+  });
+  </script>
+</body>
+</html>
