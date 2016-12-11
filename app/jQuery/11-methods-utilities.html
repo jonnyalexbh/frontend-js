@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  body,html
+  {
+    background: #000;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+  }
+  header
+  {
+    display: block;
+    margin: 0 auto 50 px auto;
+    width: 365px;
+  }
+  button
+  {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+  }
+  div
+  {
+    background: #FFF;
+    color: #000;
+    height: 50px;
+    display: block;
+    width: 400px;
+    margin: 2px auto;
+  }
+
+  </style>
+</head>
+<body>
+
+  <header >
+    <img src="../../public/img/programacion-web.jpg" alt="CF">
+  </header><!-- /header -->
+
+  <button id="test">Ejecutar</button>
+
+  <div id="e1">Metodos Utilitarios</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(function () {
+
+    $('button').click(function(){
+
+      var arreglo = ['Colombia','Venezuela', 'Brasil'];
+
+      $.each(arreglo,function(indice, val){
+
+        if(arreglo[indice]=='Colombia')
+        return true;
+
+        console.log('elemento ' + indice + ' Vale ' + val);
+
+      });
+
+
+      var arreglo = ['Colombia', 'Venezuela', 'Brasil'];
+
+      if($.inArray('Venezuela',arreglo) !== -1)
+      console.log(arreglo[$.inArray('Venezuela',arreglo)]);
+
+      var s = '         Hola        Como   Estas     ';
+      console.log(s);
+      console.log($.trim(s));
+
+    });
+
+  });
+  </script>
+</body>
+</html>

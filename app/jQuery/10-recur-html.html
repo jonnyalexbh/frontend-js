@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div>
+    <article id="padre">
+      Hey !! :D
+      <div id="test">Soy el hijo</div>
+    </article>
+  </div>
+
+  <ul>
+    <li id='primero'>Soy el primero</li>
+    <li>Soy el que sigue</li>
+    <li>aa</li>
+  </ul>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  
+  console.log($('#primero').next().text());
+
+  $('#padre').parent().text();
+  console.log($('#padre').parent().text());
+
+  $('#padre').children().attr('id')
+  console.log($('#padre').children().attr('id'));
+
+  // each
+  $("ul li").each(function(index,elemento){
+    console.log("El elemento numero " + index + " contiene " + $(elemento).text());
+  });
+
+  </script>
+</body>
+</html>
