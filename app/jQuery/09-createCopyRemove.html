@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  body,html
+  {
+    background: #000;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+  }
+  header
+  {
+    display: block;
+    margin: 0 auto 50 px auto;
+    width: 365px;
+  }
+  ol{
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+  }
+  ol li{
+    background: #088A29;
+    margin: 5px auto;
+    height: 30px;
+    width: 100%;
+  }
+  button
+  {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+  }
+  div
+  {
+    background: #FE2E64;
+    height: 50px;
+    display: block;
+    width: 400px;
+    margin: 2px auto;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header >
+    <img src="../../public/img/programacion-web.jpg" alt="CF">
+  </header>
+
+  <ol>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+  </ol>
+
+  <button id="test">Ejecutar</button>
+
+  <div id="e1">
+    <p>Div 1</p>
+  </div>
+
+  <div id="e2">
+    <p>Div 2</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(function () {
+
+    $('button').click(function(){
+
+      // appendTo mover al final del elemento
+      $('ol li:first').appendTo('ol:first')
+      // // append mover al final del elemento
+      $('ol:first').append($('ol li:first'));
+
+      // prependTo, prepend al inicio de un  elemento
+      $('ol li:last').prependTo($('ol:first'));
+      // append mover al inicio del elemento
+      $('ol:first').prepend($('ol li:last'));
+
+      // insertAfter agregar despues de un elemento
+      $('ol li:first').insertAfter('#e1');
+      $('#e1').after($('ol li:first'));
+
+      // insertBefore, before agregar antes de un elemento
+      $('ol li:first').insertBefore('#e1');
+      $('#e1').before($('ol li:first'));
+
+      // clone element
+      var clon = $('ol li:first').clone();
+      $('#e1').before(clon);
+
+      // new element
+      var nuevo_e = $('<p>Hola mundo</p>')
+      $('#e1').append(nuevo_e);
+
+      // remove element
+      $('ol li:last').remove();
+
+    });
+
+  });
+  </script>
+</body>
+</html>
