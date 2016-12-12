@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <a href="https://www.google.com.co" id="evento">Hola</a>
+  <a href="https://www.google.com.co" id="eventoDos">Hola Dos</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(function(){
+
+    $('a').click(function(e){
+      e.preventDefault();
+      console.log($(this).attr('id'));
+    });
+
+    $('a').on('click', function(){
+      console.log('Hi');
+    });
+
+  });
+  </script>
+</body>
+</html>

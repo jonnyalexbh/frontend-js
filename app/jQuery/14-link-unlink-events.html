@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div id="caja1">Hola</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  var caja1bg, v=0;
+
+  $().ready(function() {
+
+
+    $('#caja1').mouseover(function(){
+      caja1bg = $(this).css('background');
+      $(this).css('background','red');
+    });
+
+    $('#caja1').mouseout(function(){
+      $(this).css('background', caja1bg);
+    });
+
+
+
+    $('#caja1').on('mouseover',function(){
+      caja1bg = $(this).css('background');
+      $(this).css('background','red');
+    });
+
+    $('#caja1').on('mouseout',function(){
+      $(this).css('background', caja1bg);
+    });
+
+
+    $('#caja1').on({
+      'mouseover':function(){
+        v++;
+        caja1bg = $(this).css('background');
+        $(this).css('background','red')
+      },
+      'mouseout':function(){
+        $(this).css('background', caja1bg)
+        if(v >= 3 )
+        $('#caja1').off('mouseover')
+      }
+    });
+
+
+    $('#caja1').on('mouseover', function(){
+      console.log('pasaste')
+    });
+
+  });
+  </script>
+</body>
+</html>
