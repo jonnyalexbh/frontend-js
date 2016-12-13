@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  #ejemplo
+  {
+    height: 200px;
+    width: 400px;
+    background-color: #1eabb4;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="ejemplo"></div>
+  <button id="boton">Mover</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(function() {
+
+    $('#boton').on('click',function(){
+      $('#ejemplo').slideUp('slow','easeOutBounce');
+      $(this).animate({
+        height: ['+100','easeOutBounce'],
+        width: ['+200','linear']
+      });
+    });
+
+  });
+
+  </script>
+</body>
+</html>

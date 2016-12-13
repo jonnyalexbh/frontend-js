@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+
+  body,html
+  {
+    padding: 100 px;
+  }
+
+  div
+  {
+    display:block;
+    height: 80px;
+    width:  300px;
+    margin: 0 auto;
+  }
+
+  #caja1{
+    background: #4e6274;
+    margin-bottom: 100px;
+  }
+
+  #caja2{
+    background: #65b3a9;
+    margin-bottom: 100px;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div id="caja1"></div>
+  <div id="caja2"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    // $('#caja1').animate({
+    //   marginBottom: 0
+    // } ,2000);
+
+
+    // $('#caja1').animate({
+    //   marginBottom: 0
+    // } ,2000,function(){
+    //   console.log('termino');
+    // });
+
+
+    $('#caja1').animate({
+      marginBottom: 0
+    } ,2000,function(){
+      $('#caja1').animate({
+        backgroundColor: '#1086f4',
+        marginTop: -20,
+        opacity: 0.5
+      });
+    });
+
+
+  });
+
+  </script>
+</body>
+</html>

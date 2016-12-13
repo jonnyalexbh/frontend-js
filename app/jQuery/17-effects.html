@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  #ejemplo
+  {
+    background-color: #f1d900;
+    height: 200px;
+    width: 400px;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="ejemplo"></div>
+  <button id="boton">Fade out</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(function() {
+
+    $.fx.speeds.lentooo = 3000;
+    $.fx.speeds.rapidooooo = 100;
+
+    $('#boton').on('click',function(){
+
+      // $('#ejemplo').fadeOut('fast');
+      // $('#ejemplo').fadeOut(2000);
+
+      $('#ejemplo').fadeOut('lentooo',function(){
+        $('body').append('El elemento se ha borrado');
+      });
+
+    });
+
+  });
+
+  </script>
+</body>
+</html>

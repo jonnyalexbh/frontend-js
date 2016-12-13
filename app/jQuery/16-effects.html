@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  #caja1
+  {
+    background: rgba(56,56,56,0.8);
+    display: block;
+    height: 80px;
+    margin: 5% auto;
+    width: 400px;
+  }
+  </style>
+</head>
+<body>
+  
+  <div id="caja1"></div>
+
+  <button id="btn1">Mostrar</button>
+  <button id="btn2">Ocultar</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function () {
+
+    var elem = $('#caja1');
+    $('#btn1').click(function(){
+      // elem.show()
+      // elem.slideDown()
+      elem.fadeIn(600) // 600 milisegundos
+    });
+
+    $('#btn2').click(function(){
+      // elem.hide()
+      // elem.slideUp()
+      elem.fadeOut(600) // 200 milisegundos
+    });
+
+  });
+
+  </script>
+</body>
+</html>
