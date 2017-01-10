@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ngRoute</title>
+</head>
+<body>
+
+  <div ng-app="myApp">
+    <p><a href="#/">01 directivas</a></p>
+
+    <a href="#holamundo">02 Hola mundo</a>
+    <a href="#nombre">Nombre</a>
+    <a href="#nombre1">Blue</a>
+
+    <div ng-view>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  angular
+  .module('myApp', ['ngRoute'])
+  .config(function($routeProvider){
+    $routeProvider
+    .when("/", {
+      templateUrl : "01-directivas.html"
+    })
+    .when("/holamundo", {
+      templateUrl : "02-holaMundo.html"
+    })
+    .when("/nombre", {
+      templateUrl : "03-nombre.html"
+    })
+    .when("/nombre1", {
+      templateUrl : "04-nombre.html"
+    });
+  });
+  </script>
+</body>
+</html>

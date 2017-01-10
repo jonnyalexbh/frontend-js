@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>factory and service</title>
+</head>
+<body ng-app="myApp">
+
+  <!--añadimos aquí el controlador factoriaController ya que será donde mostremos los datos-->
+  <div class="row" ng-controller="factoriaController">
+    <h1 class="subheader">Información de la factoría</h1>
+    <ul class="panel callout radius">
+      <li ng-repeat="factoria in factorias">
+        <p>Id: {{ factoria.id }} Nombre: {{ factoria.nombre }} Edad: {{ factoria.edad }}</p>
+      </li>
+    </ul>
+
+    <h1 class="subheader">Información del servicio</h1>
+    <ul class="panel callout radius">
+      <li ng-repeat="servicio in servicios">
+        <p>Id: {{ servicio.id }} Nombre: {{ servicio.nombre }} Edad: {{ servicio.edad }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var app = angular.module("myApp", []);
+
+  //creamos nuestra factoría
+  app.factory('miFactoria', function(){
+    return {
+      datosFactoria: [{
+        id : 0,
+        nombre : "Israel Parra",
+        edad : "32 años"
+      },
+      {
+        id : 1,
+        nombre : "Andrés Cuenca",
+        edad : "24 años"
+      },
+      {
+        id : 2,
+        nombre : "Juan",
+        edad : "28 años"
+      },
+      {
+        id : 3,
+        nombre : "Pepito",
+        edad : "18 años"
+      },
+      {
+        id : 4,
+        nombre : "Manuel",
+        edad : "45 años"
+      }]
+    };
+  });
+
+  //creamos nuestro servicio
+  app.service('miServicio', function(){
+    this.datosServicio = function(){
+      return [
+        {
+          id : 0,
+          nombre : "Israel Parra",
+          edad : "32 años"
+        },
+        {
+          id : 1,
+          nombre : "Andrés Cuenca",
+          edad : "24 años"
+        },
+        {
+          id : 2,
+          nombre : "Juan",
+          edad : "28 años"
+        },
+        {
+          id : 3,
+          nombre : "Pepito",
+          edad : "18 años"
+        },
+        {
+          id : 4,
+          nombre : "Manuel",
+          edad : "45 años"
+        }
+      ]
+    }
+  });
+
+  angular.module('myApp', [])
+  .controller('factoriaController', ['$scope', 'miFactoria', 'miServicio', function($scope, miFactoria, miServicio){
+    //devolvemos una factoría con scope
+    $scope.factorias = miFactoria.datosFactoria;
+    //devolvemos un servicio, vemos como los dos hacen lo mismo, pero de distinta forma
+    $scope.servicios = miServicio.datosServicio();
+  }]);
+
+  </script>
+</body>
+</html>
