@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dependency Injection</title>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="myCtrl">
+
+    <input type="text" ng-model="name">
+    {{"Hola " + name}} <br><br>
+
+    <label for="">comment</label>
+    <input type="text" ng-model="newComment.comment">
+    <label for="">user name</label>
+    <input type="text" ng-model="newComment.username">
+    <button type="button" name="button" ng-click="addComment()">Add</button>
+
+    <ul>
+      <li ng-repeat="comment in comments">{{comment.comment}} - <b>{{comment.username}}</b></li>
+    </ul>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  angular.module("myApp", [])
+  .controller("myCtrl", ["$scope", function(m) {
+    m.name="jonnyalexbh";
+    m.newComment = {};
+    m.comments = [
+      {
+        comment: "angularJs",
+        username: "jonnyalexbh"
+      },
+      {
+        comment: "gulpJs",
+        username: "pelu"
+      }
+    ];
+    m.addComment= function(){
+      m.comments.push(m.newComment);
+      m.newComment = {};
+    }
+  }]);
+  </script>
+</body>
+</html>

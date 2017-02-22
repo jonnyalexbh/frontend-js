@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Data binding</title>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="myCtrl">
+
+    <input type="text" ng-model="name">
+    {{"Hola " + name}} <br><br>
+
+    <label for="">comment</label>
+    <input type="text" ng-model="newComment.comment">
+    <label for="">user name</label>
+    <input type="text" ng-model="newComment.username">
+    <button type="button" name="button" ng-click="addComment()">Add</button>
+
+    <ul>
+      <li ng-repeat="comment in comments">{{comment.comment}} - <b>{{comment.username}}</b></li>
+    </ul>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var app= angular.module("myApp", []);
+  app.controller("myCtrl", function($scope) {
+    $scope.name="jonnyalexbh";
+    $scope.newComment = {};
+    $scope.comments = [
+      {
+        comment: "angularJs",
+        username: "jonnyalexbh"
+      },
+      {
+        comment: "gulpJs",
+        username: "pelu"
+      }
+    ];
+    $scope.addComment= function(){
+      $scope.comments.push($scope.newComment);
+      $scope.newComment = {};
+    }
+  });
+  </script>
+</body>
+</html>
