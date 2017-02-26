@@ -2,17 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>$watch, $apply y $digest</title>
 </head>
-<body>
+<body ng-app="myApp">
 
-  <div ng-app="myApp", ng-controller="myCtrl">
+  <div ng-controller="myCtrl">
     <h1>{{name}}</h1>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js" charset="utf-8"></script>
   <script type="text/javascript">
-
   angular
   .module('myApp',[])
   .controller('myCtrl',function($scope){
@@ -24,7 +23,6 @@
       console.log($scope.name);
     },2000);
   });
-
   </script>
 </body>
 </html>

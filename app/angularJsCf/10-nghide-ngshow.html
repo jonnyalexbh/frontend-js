@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ng hide - ng show</title>
+  <style media="screen">
+  .animated{
+    opacity: 1;
+    max-height: auto;
+    overflow: hidden;
+    transition: all 2s ;
+  }
+  .animated.ng-hide{
+    opacity: 0;
+    max-height: 0px !important;
+    overflow: hidden;
+    display: block !important;
+  }
+  </style>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="myCtrl">
+    <div ng-show="loading">Cargando.....</div>
+    <div ng-show="!loading && posts.length <= 0">No se encontraron posts</div>
+    <ul ng-show="posts.length > 0" class="animated">
+      <li ng-repeat="row in posts">
+        <h2>{{ row.title }}</h2>
+        <p>{{ row.body }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  angular
+  .module("myApp", [])
+  .controller("myCtrl", function($scope, $http) {
+
+    $scope.posts = [];
+    $scope.loading = true;
+
+    $http.get('https://jsonplaceholder.typicode.com/posts')
+    .then(function (response) {
+      $scope.posts = response.data;
+      $scope.loading = false;
+    }, function (response) {
+      console.log(response.status);
+      $scope.loading = false;
+    });
+
+  });
+  </script>
+</body>
+</html>
