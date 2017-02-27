@@ -17,3 +17,14 @@ let country:boolean = false;
 let equipment: Array<string> = ["Nacional", "Medellin", "Envigado"];
 
 etiqueta.innerHTML = city+ " - "+years;
+
+var a = 7;
+var b = 2;
+
+if(a === 7){
+  let a = 4;
+  var b = 1;
+  console.log("DENTRO DEL IF: "+a+ " - "+b);
+}
+
+console.log("FUERA DEL IF: "+a+ " - "+b);
