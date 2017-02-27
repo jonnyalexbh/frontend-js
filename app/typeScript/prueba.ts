@@ -1,8 +1,19 @@
-function holaMundo(nam)
+function holaMundo(val)
 {
-  return "Hola mundo soy " +nam;
+  return "Hola mundo soy " +val;
 }
 
-let name = "jonny alex";
+let nombre = "jonny alex";
+var result = holaMundo(nombre);
 
-document.getElementById('container').innerHTML = holaMundo(name);
+var etiqueta = document.getElementById("container");
+etiqueta.innerHTML = result;
+
+// variables and types
+
+let city:string = "Medellin";
+let years:number = 100;
+let country:boolean = false;
+let equipment: Array<string> = ["Nacional", "Medellin", "Envigado"];
+
+etiqueta.innerHTML = city+ " - "+years;
