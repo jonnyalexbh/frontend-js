@@ -28,3 +28,21 @@ if(a === 7){
 }
 
 console.log("FUERA DEL IF: "+a+ " - "+b);
+
+// functions and typing
+function returnsNumber(num:number):string{
+  return "Numero devuelto "+num;
+}
+
+function returnsString(texto:string):number{
+  if(texto=="hola"){
+    var num = 66;
+  }
+  else{
+    var num = 90;
+  }
+  return num;
+}
+
+alert(returnsNumber(34));
+alert(returnsString("hola"));
