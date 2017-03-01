@@ -11,28 +11,28 @@ var __extends = (this && this.__extends) || (function () {
 /*
 * class program
 */
-var program = (function () {
-    function program() {
+var Program = (function () {
+    function Program() {
     }
     /*
     * get
     */
-    program.prototype.getName = function () {
+    Program.prototype.getName = function () {
         return this.name;
     };
-    program.prototype.getVersion = function () {
+    Program.prototype.getVersion = function () {
         return this.version;
     };
     /*
     * set
     */
-    program.prototype.setName = function (name) {
+    Program.prototype.setName = function (name) {
         this.name = name;
     };
-    program.prototype.setVersion = function (version) {
+    Program.prototype.setVersion = function (version) {
         this.version = version;
     };
-    return program;
+    return Program;
 }());
 /*
 * class videoEditor
@@ -61,12 +61,30 @@ var videoEditor = (function (_super) {
         return this.getName() + " - " + this.getVersion() + " - " + this.getTimeLine();
     };
     return videoEditor;
-}(program));
+}(Program));
 /*
-* instanciar objeto
+* instantiate object
 */
 var editor = new videoEditor();
 editor.setName("Laravel");
 editor.setVersion(8);
 editor.setTimeLine(4000);
 console.log(editor.getAllData());
+/*
+* practice example
+*/
+var programs = [];
+function save() {
+    var name = document.getElementById("name").value.toString();
+    var program = new Program();
+    program.setName(name);
+    program.setVersion(10);
+    programs.push(program);
+    var list = "";
+    for (var i = 0; i < programs.length; i++) {
+        list = list + "<li>" + programs[i].getName() + "</li>";
+    }
+    var listado = document.getElementById("listado");
+    listado.innerHTML = list;
+    document.getElementById("name").value = "";
+}

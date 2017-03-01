@@ -1,7 +1,7 @@
 /*
 * class program
 */
-class program {
+class Program {
   /*
   * attributes or properties
   */
@@ -30,7 +30,7 @@ class program {
 * class videoEditor
 */
 
-class videoEditor extends program {
+class videoEditor extends Program {
   /*
   * attributes or properties
   */
@@ -63,3 +63,25 @@ editor.setVersion(8);
 editor.setTimeLine(4000);
 
 console.log(editor.getAllData());
+/*
+* practice example
+*/
+var programs = [];
+
+function save(){
+  var name = (<HTMLInputElement> document.getElementById("name")).value.toString();
+  var program= new Program();
+  program.setName(name);
+  program.setVersion(10);
+  programs.push(program);
+
+  var list= "";
+
+  for(var i=0; i < programs.length; i++){
+    list = list +"<li>"+programs[i].getName()+"</li>";
+  }
+
+  var listado = <HTMLElement> document.getElementById("listado");
+  listado.innerHTML = list;
+  (<HTMLInputElement> document.getElementById("name")).value = "";
+}
