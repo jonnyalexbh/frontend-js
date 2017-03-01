@@ -1,3 +1,6 @@
+/*
+* clase
+*/
 var Car = (function () {
     /*
     * constructor

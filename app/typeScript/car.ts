@@ -1,9 +1,17 @@
-class Car
-{
+/*
+* interface
+*/
+interface CarBase{
+  getModel():string;
+  getSpeed():number;
+}
+/*
+* clase
+*/
+class Car implements CarBase {
   public color: string;
   public model: string;
   public speed: number;
-
   /*
   * constructor
   */
@@ -24,7 +32,7 @@ class Car
     return this.color;
   }
 
-  public getModel(){
+  public getModel():number{
     return this.model;
   }
 
@@ -55,7 +63,6 @@ class Car
   }
 
 }
-
 /*
 * instanciar objeto uno
 */
@@ -69,7 +76,6 @@ console.log("El color del coche 1 es: "+carOne.getColor());
 console.log("La velocodad del coche 1 es: "+carOne.getSpeed());
 carOne.brake();
 console.log("La velocodad despues de frenar del coche 1 es: "+carOne.getSpeed());
-
 /*
 * instanciar objeto dos
 */
