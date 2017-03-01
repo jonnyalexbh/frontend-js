@@ -85,3 +85,29 @@ function save(){
   listado.innerHTML = list;
   (<HTMLInputElement> document.getElementById("name")).value = "";
 }
+
+/*
+* functions de flecha
+*/
+
+// setInterval(function(){
+//   console.log("Hola sin flecha");
+// },1000);
+
+setInterval(() => {
+  console.log("Hola con flecha");
+},1000);
+
+/*
+* functions map
+*/
+var fruits = [
+  'Manzana',
+  'Naranja',
+  'Platano',
+  'Pera'
+];
+
+var recorrer = fruits.map(fruta => {
+  console.log(fruta);
+});
