@@ -1,5 +1,5 @@
 /*
-* clase
+* class CarBase
 */
 var Car = (function () {
     /*
